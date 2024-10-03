@@ -17,11 +17,7 @@ Usage same like original xNet.
 - **Wizard** - donation support
 - **@azor83** - donation for implementation of MiddleHeaders
 - **TMT** - donation for PATCH, DELETE, PUT, OPTIONS methods
-
-## Contributors
 - **[guzlewski](https://github.com/guzlewski)**: Randomizer fixes, IgnoreInvalidCookies
-
-[Make a donation to the development of the library](#donate)
 
 ## Contacts
 **Telegram**: [@kelog](https://t.me/kelog)  
@@ -288,24 +284,6 @@ request.Cookies.Set(string name, string value, string domain, string path = "/")
 var cookie = new Cookie(string name, string value, string domain, string path);
 request.Cookies.Set(cookie);
 ```
-
-# Donate
-If this project help you reduce time to develop, you can give me a cup of coffee :)  
-
-[at BuyMeACoffee.com](https://www.buymeacoffee.com/grandsilence)
-
-**PayPal**: `grand.silence@mail.ru`
-
-[**Via web-payment**: WebMoney | Steam Item | MasterCard | Visa | Sberbank.Online | Bitcoin ](https://www.digiseller.market/asp2/pay_options.asp?id_d=2582260)
-[![Imgur](https://i.imgur.com/APbu91c.png)](https://www.digiseller.market/asp2/pay_options.asp?id_d=2582260)
-
-### Wallets
-**Yandex**.Money | **Яндекс**.Деньги: `410011037924983`  
-**Webmoney**: `Z349403749504` | `U313788999957` | `E894184114651` | `X428336365219`  
-Bitcoin **BTC**: `3MTuJDRK9RcSQURsvJysqg1gp91FFTDSs7`  
-Bitcoin Gold **BTG**: `Abf3jmLwiYw6ewuwMgu4AeHw4a8WVZUySH`  
-LiteCoin **LTC**: `M8rkfHAB62NyvAPkaZUG4GeQB5DPvts4xD`  
-LiteCoin **LTC** (alternate): `32ecMPkD8uXZ7f7rUgUvEdPzrNcx21J5po`  
 
 # TODO:
 - Implement [Captcha Services](https://github.com/openbullet/openbullet/tree/master/RuriLib/CaptchaServices)
