@@ -10,6 +10,14 @@
 It's a based on [Extreme.Net](https://github.com/Fedorus/Extreme.Net). And original library [xNet](https://github.com/X-rus/xNet).  
 Usage same like original xNet.
 
+---
+
+[![](./assets/capsolver-ads-min.png)](https://www.capsolver.com/?utm_source=github&utm_medium=repo&utm_campaign=scraping&utm_term=Leaf.xNet)
+
+## Contacts
+**Telegram**: [@kelog](https://t.me/kelog)  
+**E-Mail**: mixtape774@gmail.com
+
 ## Gratitudes
 - **Artem** (devspec) - donation support. Thank you
 - **Igor' Vasilyev** - found many bugs and reported it. Thank you
@@ -18,10 +26,6 @@ Usage same like original xNet.
 - **@azor83** - donation for implementation of MiddleHeaders
 - **TMT** - donation for PATCH, DELETE, PUT, OPTIONS methods
 - **[guzlewski](https://github.com/guzlewski)**: Randomizer fixes, IgnoreInvalidCookies
-
-## Contacts
-**Telegram**: [@kelog](https://t.me/kelog)  
-**E-Mail**: mixtape774@gmail.com
 
 # Installation via [NuGet](https://www.nuget.org/)
 ```
