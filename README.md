@@ -1,36 +1,11 @@
+# xNet-Ex
+A work-in-progress "extended" version of the popular (unmaintained) xNet fork, Leaf.xNet.
+
 [![Git Releases Version](https://img.shields.io/github/release/csharp-leaf/Leaf.xNet.svg)](https://github.com/csharp-leaf/Leaf.xNet/releases)
 [![NuGet version](https://badge.fury.io/nu/Leaf.xNet.svg)](https://badge.fury.io/nu/Leaf.xNet)
 [![Build status](https://ci.appveyor.com/api/projects/status/em4aje36etb63kdt/branch/master?svg=true)](https://ci.appveyor.com/project/grandsilence/leaf-xnet/branch/master)
 [![Last Release](https://img.shields.io/github/release-date/csharp-leaf/Leaf.xNet.svg?logo=Leaf.xNet)](https://github.com/csharp-leaf/Leaf.xNet/releases)
 [![Nuget installs](https://img.shields.io/nuget/dt/Leaf.xNet.svg)](https://www.nuget.org/packages/Leaf.xNet/)  
-
-
-# Leaf.xNet
-**Leaf.xNet** - provides HTTP/HTTPS, Socks 4A, Socks 4, Socks 5.  
-It's a based on [Extreme.Net](https://github.com/Fedorus/Extreme.Net). And original library [xNet](https://github.com/X-rus/xNet).  
-Usage same like original xNet.
-
----
-
-[![](./assets/capsolver-ads-min.png)](https://www.capsolver.com/?utm_source=github&utm_medium=repo&utm_campaign=scraping&utm_term=Leaf.xNet)
-
-## Contacts
-**Telegram**: [@kelog](https://t.me/kelog)  
-**E-Mail**: mixtape774@gmail.com
-
-## Gratitudes
-- **Artem** (devspec) - donation support. Thank you
-- **Igor' Vasilyev** - found many bugs and reported it. Thank you
-- **Monaco** (BHF) - bug reporter, donations help
-- **Wizard** - donation support
-- **@azor83** - donation for implementation of MiddleHeaders
-- **TMT** - donation for PATCH, DELETE, PUT, OPTIONS methods
-- **[guzlewski](https://github.com/guzlewski)**: Randomizer fixes, IgnoreInvalidCookies
-
-# Installation via [NuGet](https://www.nuget.org/)
-```
-Install-Package Leaf.xNet
-```
 
 # Features
 ### HTTP Methods
@@ -40,43 +15,6 @@ Install-Package Leaf.xNet
 - DELETE
 - PUT
 - OPTIONS
-
-### Cloudflare bypass (obsolete)
-
-> Not maintained in public Leaf.xNet anymore.  
-  But you can [order private paid Leaf.xNet with support](https://t.me/kelog).  
-  Telegram: [@kelog](https://t.me/kelog)
-    
-See demo project in the Examples folder.
-
-```csharp
-using Leaf.xNet.Services.Cloudflare;
-
-// Check and pass CloudFlare JS Challange if it's present
-// Attention: It's working when Re-Captcha enabled
-var httpRequest = new HttpRequest();
-var clearResp = httpRequest.GetThroughCloudflare("https://...");
-
-// Check only (without solution)
-var resp = httpRequest.Get("https://...");
-bool isCloudFlared = resp.isCloudFlared();
-```
-
-#### CloudFlare bypass when ReCaptcha required
-See demo project in the Examples folder.
-```csharp
-using Leaf.xNet.Services.Captcha;
-
-// You can use: RucaptchaSolver | TwoCaptchaSolver | CapmonsterSolver
-http.CaptchaSolver = new RucaptchaSolver {
-    ApiKey = "your_key",
-	
-	// If you need to use Proxy (Recaptcha for example) - uncomment the line below
-	// Proxy = new CaptchaProxy(CaptchaProxyType.HTTPS, "80.81.82.83:8080"),
-	// // ProxyTypes: CaptchaProxyType.HTTP || HTTPS || SOCKS4 || SOCKS5
-};
-var clearResp = httpRequest.GetThroughCloudflare("https://...");
-```
 
 ### Keep temporary headers (when redirected)
 It's enabled by default. But you can disable this behavior:
