@@ -3,6 +3,7 @@ A work-in-progress "extended" version of the popular (unmaintained) xNet fork, L
 
 # TODO:
 - Fix nullable issues/fully migrate to .NET Core
+- Migrate from/fix obsolete and deprecated system classes
 - Add full async/await support
 - Use JsonSerializer (System.Text.Json) for saving/loading cookies
 - Add AOT support
