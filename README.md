@@ -1,11 +1,15 @@
 # xNet-Ex
 A work-in-progress "extended" version of the popular (unmaintained) xNet fork, Leaf.xNet.
 
-[![Git Releases Version](https://img.shields.io/github/release/csharp-leaf/Leaf.xNet.svg)](https://github.com/csharp-leaf/Leaf.xNet/releases)
-[![NuGet version](https://badge.fury.io/nu/Leaf.xNet.svg)](https://badge.fury.io/nu/Leaf.xNet)
-[![Build status](https://ci.appveyor.com/api/projects/status/em4aje36etb63kdt/branch/master?svg=true)](https://ci.appveyor.com/project/grandsilence/leaf-xnet/branch/master)
-[![Last Release](https://img.shields.io/github/release-date/csharp-leaf/Leaf.xNet.svg?logo=Leaf.xNet)](https://github.com/csharp-leaf/Leaf.xNet/releases)
-[![Nuget installs](https://img.shields.io/nuget/dt/Leaf.xNet.svg)](https://www.nuget.org/packages/Leaf.xNet/)  
+# TODO:
+- Fix nullable issues/fully migrate to .NET Core
+- Add full async/await support
+- Use JsonSerializer (System.Text.Json) for saving/loading cookies
+- Add AOT support
+- Translate code docs into English (en-US)
+- Move the `HttpResponse` indexer to the `Headers` property and implement IEnumerable for it
+- Implement new property `StoreResponseCookies` for `HttpRequest`: `HttpResponse` should have `Cookies` as `IReadOnlyKeyValueCollection<string,Cookie>` with indexer.
+- Add cross-platform support
 
 # Features
 ### HTTP Methods
@@ -226,8 +230,3 @@ request.Cookies.Set(string name, string value, string domain, string path = "/")
 var cookie = new Cookie(string name, string value, string domain, string path);
 request.Cookies.Set(cookie);
 ```
-
-# TODO:
-- Implement [Captcha Services](https://github.com/openbullet/openbullet/tree/master/RuriLib/CaptchaServices)
-- Move `HttpResponse` indexer to `Headers` property and implement IEnumerable for it
-- Implement new property `StoreResponseCookies` for `HttpRequest`: `HttpResponse` should have `Cookies` as `IReadOnlyKeyValueCollection<string,Cookie>` with indexer.
