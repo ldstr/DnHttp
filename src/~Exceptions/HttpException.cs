@@ -1,4 +1,5 @@
-﻿using System.Runtime.Serialization;
+﻿using System.Net;
+using System.Runtime.Serialization;
 using System.Security.Permissions;
 using DnHttp.Properties;
 
@@ -21,7 +22,7 @@ public sealed class HttpException : NetException
     /// <summary>
     /// Возвращает код состояния ответа от HTTP-сервера.
     /// </summary>
-    public HttpStatusCode HttpStatusCode { get; }
+    public HttpStatusCode? HttpStatusCode { get; }
 
     #endregion
 
@@ -43,8 +44,10 @@ public sealed class HttpException : NetException
     /// </summary>
     /// <param name="message">Сообщение об ошибке с объяснением причины исключения.</param>
     /// <param name="innerException">Исключение, вызвавшее текущие исключение, или значение <see langword="null" />.</param>
-    public HttpException(string message, Exception innerException = null)
-        : base(message, innerException) { }
+    public HttpException(
+        string message,
+        Exception? innerException = null
+        ) : base(message, innerException) { }
 
     /// <inheritdoc />
     /// <summary>
@@ -54,8 +57,11 @@ public sealed class HttpException : NetException
     /// <param name="status">Статус HTTP вызванного исключения</param>
     /// <param name="httpStatusCode">Код состояния ответа от HTTP-сервера.</param>
     /// <param name="innerException">Исключение, вызвавшее текущие исключение, или значение <see langword="null" />.</param>
-    public HttpException(string message, HttpExceptionStatus status,
-        HttpStatusCode httpStatusCode = HttpStatusCode.None, Exception innerException = null)
+    public HttpException(
+        string message,
+        HttpExceptionStatus status,
+        HttpStatusCode? httpStatusCode = null,
+        Exception? innerException = null)
         : base(message, innerException)
     {
         Status = status;

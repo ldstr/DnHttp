@@ -1,4 +1,5 @@
-﻿using System.Net.Sockets;
+﻿using System.Net;
+using System.Net.Sockets;
 using System.Text;
 using DnHttp.Properties;
 
@@ -146,7 +147,7 @@ public sealed class HttpProxyClient : ProxyClient
         if (destinationPort == 80)
             return curTcpClient;
 
-        HttpStatusCode statusCode;
+        HttpStatusCode? statusCode;
 
         try
         {
@@ -203,7 +204,7 @@ public sealed class HttpProxyClient : ProxyClient
         nStream.Write(buffer, 0, buffer.Length);
     }
 
-    private HttpStatusCode ReceiveResponse(NetworkStream nStream)
+    private HttpStatusCode? ReceiveResponse(NetworkStream nStream)
     {
         var buffer = new byte[BufferSize];
         var responseBuilder = new StringBuilder();
@@ -237,7 +238,7 @@ public sealed class HttpProxyClient : ProxyClient
 
         return Enum.TryParse(statusLine, out HttpStatusCode statusCode) 
             ? statusCode
-            : HttpStatusCode.InvalidStatusCode;
+            : null;
     }
 
     private void WaitData(NetworkStream nStream)

@@ -2,6 +2,8 @@
 using System.Text;
 using System.Text.RegularExpressions;
 using DnHttp.Properties;
+using System.Net;
+
 
 #if DEBUG
 using System.Diagnostics;
@@ -1483,10 +1485,13 @@ public sealed class HttpResponse
         return false;
     }
 
-    private HttpException NewHttpException(string message, Exception innerException = null)
+    private HttpException NewHttpException(
+        string message,
+        Exception? innerException = null
+        )
     {
         return new HttpException(string.Format(message, Address.Host),
-            HttpExceptionStatus.ReceiveFailure, HttpStatusCode.None, innerException);
+            HttpExceptionStatus.ReceiveFailure, null, innerException);
     }
 
     #endregion

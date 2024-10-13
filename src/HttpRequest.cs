@@ -3728,10 +3728,13 @@ public sealed class HttpRequest : IDisposable
             _temporaryHeaders = null;
     }
 
-    private HttpException NewHttpException(string message,
-        Exception innerException = null, HttpExceptionStatus status = HttpExceptionStatus.Other)
+    private HttpException NewHttpException(
+        string message,
+        Exception? innerException = null,
+        HttpExceptionStatus status = HttpExceptionStatus.Other
+        )
     {
-        return new HttpException(string.Format(message, Address.Host), status, HttpStatusCode.None, innerException);
+        return new HttpException(string.Format(message, Address.Host), status, null, innerException);
     }
 
     #endregion
