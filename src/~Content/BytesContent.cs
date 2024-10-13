@@ -2,17 +2,17 @@
 
 /// <inheritdoc />
 /// <summary>
-/// Представляет тело запроса в виде байтов.
+/// Represents the request body as bytes.
 /// </summary>
 public class BytesContent : HttpContent
 {
     #region Поля (защищённые)
 
-    /// <summary>Содержимое тела запроса.</summary>
+    /// <summary>Contents of the request body.</summary>
     protected byte[] Content;
-    /// <summary>Смещение в байтах содержимого тела запроса.</summary>
+    /// <summary>The byte offset of the request body contents.</summary>
     protected int Offset;
-    /// <summary>Число отправляемых байтов содержимого.</summary>
+    /// <summary>The number of bytes of content to send.</summary>
     protected int Count;
 
     #endregion
@@ -21,7 +21,7 @@ public class BytesContent : HttpContent
 
     /// <inheritdoc />
     /// <summary>
-    /// Инициализирует новый экземпляр класса <see cref="T:Leaf.xNet.BytesContent" />.
+    /// Initializes a new instance of the class, <see cref="T:DnHttp.BytesContent" />.
     /// </summary>
     /// <param name="content">Содержимое тела запроса.</param>
     /// <exception cref="T:System.ArgumentNullException">Значение параметра <paramref name="content" /> равно <see langword="null" />.</exception>
