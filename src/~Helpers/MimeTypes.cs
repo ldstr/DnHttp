@@ -1,8 +1,8 @@
 namespace DnHttp;
 
-public static class NetStandard
+public static class MimeTypes
 {
-    public static readonly Dictionary<string, string> MimeTypes = new Dictionary<string, string> {
+    public static readonly Dictionary<string, string> Types = new() {
         {".323", "text/h323"},
         {".aaf", "application/octet-stream"},
         {".aca", "application/octet-stream"},

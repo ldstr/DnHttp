@@ -131,8 +131,8 @@ public static class Http
         #if IS_NETFRAMEWORK
         return MimeMapping.GetMimeMapping(extension);
         #else
-        if (NetStandard.MimeTypes.ContainsKey(extension))
-            return NetStandard.MimeTypes[extension];
+        if (MimeTypes.Types.ContainsKey(extension))
+            return MimeTypes.Types[extension];
 
         return "application/octet-stream";
         #endif

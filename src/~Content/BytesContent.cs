@@ -17,7 +17,6 @@ public class BytesContent : HttpContent
 
     #endregion
 
-
     #region Конструкторы (открытые)
 
     /// <inheritdoc />
@@ -51,8 +50,7 @@ public class BytesContent : HttpContent
     {
         #region Проверка параметров
 
-        if (content == null)
-            throw new ArgumentNullException(nameof(content));
+        ArgumentNullException.ThrowIfNull(content);
 
         if (offset < 0)
             throw ExceptionHelper.CanNotBeLess(nameof(offset), 0);
